@@ -1,6 +1,7 @@
 # Office User Bot
 
 ### 用 Telegram bot 创建 Office 账号
+![image.png](https://i.loli.net/2021/05/07/mbDANLcO6jw3EzG.png)
 
 ## 环境
 
@@ -62,4 +63,6 @@ pip install requirements.txt
 python bot.py
 ```
 
-### 输入任意消息 bot 即会回复
+#### 输入任意消息 bot 即会回复
+
+#### 生成的激活码保存在同目录下的 `codes.json`

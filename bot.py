@@ -3,7 +3,9 @@ import json
 import logging
 import traceback
 
+# noinspection PyPackageRequirements
 import telebot
+# noinspection PyPackageRequirements
 from telebot import types
 
 from code import Code
