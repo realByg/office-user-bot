@@ -9,12 +9,12 @@ from telebot import types
 from code import Code
 from office_user import OfficeUser
 
+config = json.load(open('config.json'))
+
 bot = telebot.TeleBot(
-    token='1768910084:AAGajN---_xO5LQnYM9Bs-d1fNxAqio5RDs',
+    token=config['bot']['token'],
     parse_mode='HTML'
 )
-
-config = json.load(open('config.json'))
 
 user_dict = {
     # 'user_id': {
@@ -59,6 +59,13 @@ def gen(m):
     codes = C.gen(amount)
     bot.send_message(
         text='\n'.join(codes),
+        chat_id=m.from_user.id
+    )
+
+
+def about(m):
+    bot.send_message(
+        text='<a href="https://github.com/zayabighead/office-user-bot">Office User Bot</a>',
         chat_id=m.from_user.id
     )
 
@@ -196,32 +203,6 @@ def notify_admin(call):
         )
 
 
-@bot.message_handler(content_types=['text'])
-def handle_text(m):
-    # noinspection PyBroadException
-    try:
-        if m.from_user.id in config['banned']['tgId']:
-            return
-
-        text = str(m.text).strip()
-
-        bot.send_chat_action(
-            chat_id=m.from_user.id,
-            action='typing'
-        )
-        if text == '/create':
-            create(m)
-
-        elif text.startswith('/gen'):
-            gen(m)
-
-        else:
-            start(m)
-
-    except Exception:
-        traceback.print_exc()
-
-
 def create_account(call):
     user_id = call.from_user.id
     msg_id = call.message.message_id
@@ -271,6 +252,35 @@ def create_account(call):
             text=text,
             chat_id=chat_id
         )
+
+
+@bot.message_handler(content_types=['text'])
+def handle_text(m):
+    # noinspection PyBroadException
+    try:
+        if m.from_user.id in config['banned']['tgId']:
+            return
+
+        text = str(m.text).strip()
+
+        bot.send_chat_action(
+            chat_id=m.from_user.id,
+            action='typing'
+        )
+        if text == '/create':
+            create(m)
+
+        elif text == '/about':
+            about(m)
+
+        elif text.startswith('/gen'):
+            gen(m)
+
+        else:
+            start(m)
+
+    except Exception:
+        traceback.print_exc()
 
 
 @bot.callback_query_handler(func=lambda call: True)
