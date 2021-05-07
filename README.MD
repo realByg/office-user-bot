@@ -8,20 +8,24 @@
 
 ## 用法
 
+### 1. 在 @botfather 新建 bot
+
+### 2. 下载项目
+
 ```
 git clone https://github.com/zayabighead/office-user-bot.git
 cd office-user-bot
 pip install requirements.txt
 ```
 
-### 同目录下新建 `config.json` 并如下编辑
+### 3. 同目录下新建 `config.json` 并如下编辑
 
 ```
 {
   "bot": {
     "admin": bot 管理员，填 tg 的用户 id,
     "notify": true / false 是否接受新建账号时的推送,
-    "token": "bot 的 token，从 botfather 那里获取"
+    "token": "bot 的 token，从 botfather 获取"
   },
   "aad": {
     "clientId": "aad app 的 client id",
@@ -52,4 +56,10 @@ pip install requirements.txt
 }
 ```
 
+### 4. 运行
 
+```
+python bot.py
+```
+
+### 输入任意消息 bot 即会回复
