@@ -17,7 +17,7 @@
 ```
 git clone https://github.com/zayabighead/office-user-bot.git
 cd office-user-bot
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ### 3. 同目录下新建 `config.json` 并如下编辑
