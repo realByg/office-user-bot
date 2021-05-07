@@ -1,8 +1,7 @@
 import json
-
+import secrets
 import requests
 from time import time
-import secrets
 
 
 class OfficeUser:
