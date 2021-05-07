@@ -57,12 +57,13 @@ def start(m):
 
 
 def gen(m):
-    amount = int(str(m.text).strip().split('/gen')[1].strip())
-    codes = C.gen(amount)
-    bot.send_message(
-        text='\n'.join(codes),
-        chat_id=m.from_user.id
-    )
+    if m.from_user.id == config['bot']['admin']:
+        amount = int(str(m.text).strip().split('/gen')[1].strip())
+        codes = C.gen(amount)
+        bot.send_message(
+            text='\n'.join(codes),
+            chat_id=m.from_user.id
+        )
 
 
 def about(m):
