@@ -1,19 +1,23 @@
-# Office User Bot
+# 🍼 `office-user-bot`
 
-### 用 Telegram bot 创建 Office 账号
+[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 
-![image.png](https://i.loli.net/2021/05/07/7Viy9l84MUkFzBc.png)
-![image.png](https://i.loli.net/2021/05/07/mbDANLcO6jw3EzG.png)
+## 🐙 用 Telegram bot 创建 Office 账号
 
-## 环境
+![](readme/ea7870bb.png)
+![](readme/adeff432.png)
 
-### python 3.6+
+### 🥼 环境
 
-## 用法
+```
+python 3.6+
+```
 
-### 1. 在 @botfather 新建 bot
+### 💢 用法
 
-### 2. 下载项目
+#### 1. 在 @botfather 新建 bot
+
+#### 2. 下载项目
 
 ```
 git clone https://github.com/zayabighead/office-user-bot.git
@@ -21,7 +25,7 @@ cd office-user-bot
 pip install -r requirements.txt
 ```
 
-### 3. 同目录下新建 `config.json` 并如下编辑
+#### 3. 同目录下新建 `config.json` 并如下编辑
 
 ```
 {
@@ -59,12 +63,12 @@ pip install -r requirements.txt
 }
 ```
 
-### 4. 运行
+#### 4. 运行
 
 ```
 python bot.py
 ```
 
-#### 输入任意消息 bot 即会回复
+输入任意消息 bot 即会回复
 
-#### 生成的激活码保存在同目录下的 `codes.json`
+生成的激活码保存在同目录下的 `codes.json`
